@@ -1,0 +1,86 @@
+{
+    "rootNode": {
+        "value": null,
+        "children": [
+            {
+                "value": "D_479353866",
+                "children": [
+                    {
+                        "value": "SIBNAME_1_1",
+                        "children": [
+                            {
+                                "value": "D_814510313_1_1",
+                                "children": [
+                                    {
+                                        "value": "SIBCONF_1_1",
+                                        "children": [
+                                            {
+                                                "value": "_CONTINUE1_1_1",
+                                                "children": [
+                                                    {
+                                                        "value": "SIBNAME_2_2",
+                                                        "children": [
+                                                            {
+                                                                "value": "D_814510313_2_2",
+                                                                "children": [
+                                                                    {
+                                                                        "value": "D_528753070_2_2",
+                                                                        "children": []
+                                                                    },
+                                                                    {
+                                                                        "value": "SIBCONF_2_2",
+                                                                        "children": [
+                                                                            {
+                                                                                "value": "_CONTINUE1_2_2",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "value": "SIBNAME_3_3",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "value": "D_814510313_3_3",
+                                                                                                "children": [
+                                                                                                    {
+                                                                                                        "value": "SIBCONF_3_3",
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "value": "_CONTINUE1_3_3",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "value": "_CONTINUE1_DONE",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "value": "END",
+                                                                                                                                "children": []
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "currentNode": "END"
+}

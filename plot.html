@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v4.js"></script>
+    </head>
+    <body>
+        <button id="example">Use example JSON</button>
+        <label style="display: block;margin-top: 10px;" for="jsonenter">JSONTree</label>
+        <textarea id="jsonenter"></textarea>
+        <button id="useinput">Process JSON</button>
+        <ol id="OL"></ol>
+        <div id="my_svg"></div>
+    </body>
+    <script type="module">
+        let list = document.getElementById("OL")
+        let jsonarea=document.getElementById("jsonenter")
+
+        document.getElementById("example").addEventListener("click",async()=>{
+            let json = await (await fetch("./test1.json")).json()
+            addItem(json.rootNode)
+
+            build_svg(json)
+        })
+        document.getElementById("useinput").addEventListener("click",async()=>{
+            let json = JSON.parse(jsonarea.value)
+            addItem(json.rootNode)
+
+            build_svg(json)
+        })
+
+        function addItem(item){
+            let lie=document.createElement("li")
+            lie.innerText=item.value??"*** ROOT ***"
+            list.insertAdjacentElement("beforeend",lie)
+
+            item.children.forEach( x=> addItem(x))
+        }
+
+        function* objid(){
+            let id=0;
+            while (true) {
+                yield ++id;
+            }
+        }
+        let indexer = objid()
+
+        function build_svg_obj(obj,item){
+            let node = {
+                id:item.id,
+                name:item.value??"*** ROOT ***"
+            }
+            obj.nodes.push(node)
+            console.log(item)
+            item.children.forEach( x=> {
+                x.id=indexer.next().value;
+                obj.links.push({
+                    "source":item.id,
+                    "target":x.id
+                });
+                build_svg_obj(obj,x)
+            })
+        }
+
+        function build_svg(json){
+            let obj = {
+                nodes: [],
+                links: []
+            }
+            json.rootNode.id = indexer.next().value
+            build_svg_obj(obj,json.rootNode)
+            console.log(obj)
+        }
+
+    </script>
+</html>
